@@ -7,6 +7,48 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const clientTypes = [
+  { label: "Government Ministries & Parastatals", icon: "🏛️", color: "bg-indigo-50 border-indigo-100 hover:border-indigo-300" },
+  { label: "Churches & Religious Institutions", icon: "⛪", color: "bg-violet-50 border-violet-100 hover:border-violet-300" },
+  { label: "Schools & Educational Institutions", icon: "🏫", color: "bg-cyan-50 border-cyan-100 hover:border-cyan-300" },
+  { label: "Private Developers & Individuals", icon: "🏗️", color: "bg-amber-50 border-amber-100 hover:border-amber-300" },
+  { label: "SACCO Societies", icon: "🤝", color: "bg-emerald-50 border-emerald-100 hover:border-emerald-300" },
+  { label: "Corporate Organizations", icon: "🏢", color: "bg-blue-50 border-blue-100 hover:border-blue-300" },
+  { label: "Healthcare Facilities", icon: "🏥", color: "bg-rose-50 border-rose-100 hover:border-rose-300" },
+  { label: "Agricultural Cooperatives", icon: "🌾", color: "bg-lime-50 border-lime-100 hover:border-lime-300" },
+];
+
+const strategies = [
+  {
+    title: "Product Development",
+    description: "We grow our market share by developing new products to serve that market — solving new problems or adding to the existing ones our products already address.",
+    icon: "🚀",
+    topBar: "bg-indigo-500",
+    num: "01",
+  },
+  {
+    title: "Market Development",
+    description: "We grow by developing new segments of the market, expanding our user base, or expanding current users' engagement with our products.",
+    icon: "📈",
+    topBar: "bg-violet-500",
+    num: "02",
+  },
+  {
+    title: "Market Penetration",
+    description: "We grow market share through bundled offers, competitive pricing, and advertising — everything we can do through strategic marketing.",
+    icon: "🎯",
+    topBar: "bg-cyan-500",
+    num: "03",
+  },
+  {
+    title: "Diversification",
+    description: "Growing our market share by entering entirely new markets and expanding the breadth of our service portfolio.",
+    icon: "🌍",
+    topBar: "bg-amber-500",
+    num: "04",
+  },
+];
+
 export default function Clients() {
   return (
     <Layout>
@@ -19,157 +61,171 @@ export default function Clients() {
           />
         </Head>
 
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white py-12 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">
+        {/* ── Hero ── */}
+        <section className="relative bg-slate-950 py-16 md:py-24 overflow-hidden">
+          <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-indigo-900/25 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[320px] h-[320px] bg-violet-900/20 rounded-full blur-3xl pointer-events-none" />
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-indigo-400 font-semibold text-xs uppercase tracking-widest mb-4">
+              Who We Serve
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5">
               Our Partners & Clients
             </h1>
-            <div className="w-24 h-1 bg-white mx-auto"></div>
-            <p className="text-lg md:text-xl text-emerald-100 text-center mt-6 max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-indigo-500 mx-auto rounded-full mb-6" />
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
               Trusted by organizations across Kenya and East Africa
             </p>
           </div>
         </section>
 
-        {/* Partners Overview */}
-        <section className="py-12 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-emerald-50 rounded-2xl p-6 md:p-8 mb-12 md:mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+        {/* ── Partners Overview ── */}
+        <section
+          className="py-14 md:py-20 bg-white relative overflow-hidden"
+          style={{
+            backgroundImage: "radial-gradient(circle, #e0e7ff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        >
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+              <p className="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-3">
                 Our Commitment
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+                A Network You Can Trust
               </h2>
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
-                We have managed to create a big database of trustworthy and
-                satisfied business owners as partners. Our active partners are
-                found across various sectors, and we continue to build lasting
-                relationships based on quality, integrity, and excellence.
+              <div className="w-12 h-1 bg-indigo-600 mx-auto rounded-full mb-5" />
+              <p className="text-gray-500 text-base md:text-lg leading-relaxed">
+                We have managed to create a big database of trustworthy and satisfied business
+                owners as partners. Our active partners are found across various sectors, and
+                we continue to build lasting relationships based on quality, integrity, and excellence.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-12">
-              {[
-                "Government Ministries & Parastatals",
-                "Churches & Religious Institutions",
-                "Schools & Educational Institutions",
-                "Private Developers & Individuals",
-                "SACCO Societies",
-                "Corporate Organizations",
-                "Healthcare Facilities",
-                "Agricultural Cooperatives",
-              ].map((client, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+              {clientTypes.map((client, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 text-center hover:shadow-lg transition-all transform hover:scale-105"
+                  className={`${client.color} border rounded-2xl p-5 md:p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200`}
                 >
-                  <div className="text-3xl md:text-4xl mb-3">🤝</div>
-                  <h4 className="font-semibold text-gray-900 text-sm md:text-base">{client}</h4>
+                  <div className="text-3xl md:text-4xl mb-3">{client.icon}</div>
+                  <h4 className="font-semibold text-gray-900 text-xs md:text-sm leading-snug">
+                    {client.label}
+                  </h4>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Growth Strategy */}
-        <section className="py-12 md:py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        {/* ── Growth Strategy — dark section ── */}
+        <section className="relative py-14 md:py-24 bg-slate-950 overflow-hidden">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-900/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-violet-900/15 rounded-full blur-3xl pointer-events-none" />
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+              <p className="text-indigo-400 font-semibold text-xs uppercase tracking-widest mb-3">
+                How We Scale
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
                 Our Growth Strategy
               </h2>
-              <div className="w-24 h-1 bg-emerald-700 mx-auto"></div>
-              <p className="text-lg md:text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
+              <div className="w-12 h-1 bg-indigo-500 mx-auto rounded-full mb-5" />
+              <p className="text-slate-400 text-base md:text-lg">
                 PREMIER GARNET LIMITED utilizes a 4-part growth plan to enable its success
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {[
-                {
-                  title: "Product Development Strategy",
-                  description:
-                    "We shall grow our market share by developing new products to serve that market. These new products should either solve for a new problem or add to the existing problem your product solves.",
-                  icon: "🚀",
-                },
-                {
-                  title: "Market Development Strategy",
-                  description:
-                    "We shall grow our market share by developing new segments of the market, expanding your user base, or expanding your current users' usage of your product.",
-                  icon: "📈",
-                },
-                {
-                  title: "Market Penetration Strategy",
-                  description:
-                    "We shall grow our market share by bundling products, lowering prices, and advertising—basically everything we can do through marketing after our product is created.",
-                  icon: "🎯",
-                },
-                {
-                  title: "Diversification Strategy",
-                  description:
-                    "Growing our market share by entering entirely new markets.",
-                  icon: "🌍",
-                },
-              ].map((strategy, index) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+              {strategies.map((s, i) => (
                 <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all"
+                  key={i}
+                  className="relative group bg-white/5 border border-white/10 rounded-2xl p-6 md:p-7 hover:bg-white/10 hover:border-indigo-500/40 transition-all duration-300 overflow-hidden"
                 >
-                  <div className="text-4xl md:text-5xl mb-4">{strategy.icon}</div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
-                    {strategy.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                    {strategy.description}
-                  </p>
+                  <span className="absolute -bottom-2 -right-1 text-[5rem] font-extrabold leading-none text-white/[0.04] select-none pointer-events-none">
+                    {s.num}
+                  </span>
+                  <div className={`w-10 h-1 ${s.topBar} rounded-full mb-5 group-hover:w-14 transition-all duration-300`} />
+                  <div className="text-3xl mb-4">{s.icon}</div>
+                  <h3 className="text-base font-bold text-white mb-2">{s.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{s.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Partner With Us */}
-        <section className="py-12 md:py-20 bg-white">
+        {/* ── Why Partner With Us ── */}
+        <section className="py-14 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <div className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+              <p className="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-3">
+                The Advantage
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
                 Why Partner With Us
               </h2>
-              <div className="w-24 h-1 bg-emerald-700 mx-auto"></div>
+              <div className="w-12 h-1 bg-indigo-600 mx-auto rounded-full" />
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 md:p-8 text-center">
-                <div className="text-4xl md:text-5xl mb-4">✅</div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                  Quality Assured
-                </h3>
-                <p className="text-gray-700 text-sm md:text-base">
-                  We provide quality products made with the best reliable and
-                  environmentally safe raw materials.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 md:p-8 text-center">
-                <div className="text-4xl md:text-5xl mb-4">⚡</div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                  Efficient Service
-                </h3>
-                <p className="text-gray-700 text-sm md:text-base">
-                  Affordable yet efficient services and products delivered with
-                  integrity and professionalism.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 md:p-8 text-center">
-                <div className="text-4xl md:text-5xl mb-4">🤝</div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                  Lasting Relationships
-                </h3>
-                <p className="text-gray-700 text-sm md:text-base">
-                  We foster lasting relationships with professionals, government
-                  bodies, and trade suppliers.
-                </p>
-              </div>
+            <div className="grid md:grid-cols-3 gap-5 md:gap-7">
+              {[
+                {
+                  icon: "✅",
+                  title: "Quality Assured",
+                  desc: "We provide quality products made with the best reliable and environmentally safe raw materials.",
+                  topBar: "bg-indigo-500",
+                  iconBg: "bg-indigo-50",
+                },
+                {
+                  icon: "⚡",
+                  title: "Efficient Service",
+                  desc: "Affordable yet efficient services and products delivered with integrity and professionalism.",
+                  topBar: "bg-violet-500",
+                  iconBg: "bg-violet-50",
+                },
+                {
+                  icon: "🤝",
+                  title: "Lasting Relationships",
+                  desc: "We foster lasting relationships with professionals, government bodies, and trade suppliers.",
+                  topBar: "bg-cyan-500",
+                  iconBg: "bg-cyan-50",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
+                  <div className={`h-1 ${item.topBar}`} />
+                  <div className="p-7 md:p-8">
+                    <div className={`w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center text-2xl mb-4`}>
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-extrabold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -42,10 +42,10 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center h-16 md:h-20">
             <Link href="/" className="flex-shrink-0">
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-emerald-700">
-                  Premier Garnet
+                <h1 className="text-xl md:text-2xl font-bold text-indigo-700">
+                 Garnet
                 </h1>
-                <p className="text-xs text-gray-600">Limited</p>
+                <p className="text-xs text-gray-600">Kenya</p>
               </div>
             </Link>
             
@@ -57,8 +57,8 @@ export default function Layout({ children }: LayoutProps) {
                   href={link.href}
                   className={`text-sm xl:text-base font-medium transition-colors ${
                     router.pathname === link.href
-                      ? "text-emerald-700"
-                      : "text-gray-700 hover:text-emerald-700"
+                      ? "text-indigo-700"
+                      : "text-gray-700 hover:text-indigo-700"
                   }`}
                 >
                   {link.label}
@@ -69,7 +69,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="hidden lg:block">
               <Link
                 href="/contact"
-                className="bg-emerald-700 text-white px-4 xl:px-6 py-2 rounded-full hover:bg-emerald-800 transition-colors font-medium text-sm xl:text-base"
+                className="bg-indigo-600 text-white px-4 xl:px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors font-medium text-sm xl:text-base"
               >
                 Get Quote
               </Link>
@@ -125,7 +125,7 @@ export default function Layout({ children }: LayoutProps) {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-2 px-4 rounded-lg font-medium transition-colors ${
                     router.pathname === link.href
-                      ? "bg-emerald-50 text-emerald-700"
+                      ? "bg-indigo-50 text-indigo-700"
                       : "text-gray-700 hover:bg-gray-50"
                   }`}
                 >
@@ -135,7 +135,7 @@ export default function Layout({ children }: LayoutProps) {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block bg-emerald-700 text-white py-2 px-4 rounded-lg font-medium text-center hover:bg-emerald-800 transition-colors"
+                className="block bg-indigo-600 text-white py-2 px-4 rounded-lg font-medium text-center hover:bg-indigo-700 transition-colors"
               >
                 Get Quote
               </Link>
